@@ -1,0 +1,89 @@
+/* ═══════════════════════════════════════════════════
+   ChefSnap AI — Scandinavian Kitchen Light Theme
+   Cream canvas · Forest green · Sage accents
+   ═══════════════════════════════════════════════════ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Scrollbar ─── */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #c2d5cc #f5f5f4;
+}
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #f5f5f4; }
+::-webkit-scrollbar-thumb { background: #c2d5cc; border-radius: 999px; }
+
+/* ─── Light Glass Surfaces ─── */
+@layer components {
+  .glass {
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(214, 211, 209, 0.45);
+  }
+
+  .glass-strong {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(214, 211, 209, 0.55);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  }
+}
+
+/* ─── Utilities ─── */
+@layer utilities {
+  .gradient-text {
+    background: linear-gradient(135deg, #2D4238, #3d6b54, #2D4238);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hover-lift {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .hover-lift:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  }
+
+  .chip-active {
+    background: #E2ECE9;
+    color: #2D4238;
+    font-weight: 600;
+    box-shadow: 0 1px 4px rgba(45, 66, 56, 0.10);
+  }
+
+  .modal-overlay {
+    background: rgba(250, 249, 246, 0.80);
+    backdrop-filter: blur(8px);
+  }
+}
+
+/* ─── Recipe Card ─── */
+.recipe-card {
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+.recipe-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.07);
+}
+
+/* ─── Ingredient Badge ─── */
+.ingredient-badge {
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+.ingredient-badge:hover {
+  transform: scale(1.04);
+  box-shadow: 0 8px 24px rgba(45, 66, 56, 0.08);
+}
+
+/* ─── File Input ─── */
+input[type='file'] {
+  display: none;
+}
